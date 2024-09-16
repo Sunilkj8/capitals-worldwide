@@ -256,8 +256,8 @@ let country = [
 let countryChange;
 function Form(props) {
   const [checkCountryChg, updateCountry] = useState(generateCountry());
-  console.log(checkCountryChg)
-   function generateCountry() {
+  console.log(checkCountryChg);
+  function generateCountry() {
     let ind = Math.floor(Math.random() * country.length - 1);
     // console.log(ind);
     return country[ind];
@@ -266,25 +266,29 @@ function Form(props) {
   function handleClick() {
     // console.log("clicked");
     // console.log(inputValue)
-     const val1 = inputValue.toLowerCase().trim();
+    const val1 = inputValue.toLowerCase().trim();
     console.log(val1);
-    const val2 =  checkCountryChg.capital.toLowerCase()
+    const val2 = checkCountryChg.capital.toLowerCase();
     console.log(val2);
     if (val1 === val2) {
       console.log("correct");
       updateScore(currScore + 1);
       updateCountry(generateCountry());
       countryChange = checkCountryChg;
+      clearInput();
     } else {
       console.log("wrong");
-      alert("Wrong answer your current score is : "+currScore)
-      location.reload()
+      alert("Wrong answer your current score is : " + currScore);
+      location.reload();
     }
   }
   const [inputValue, setInputVal] = useState("");
   function handleChange(event) {
     const valHolder = event.target.value;
     setInputVal(valHolder);
+  }
+  function clearInput() {
+    setInputVal("");
   }
 
   return (
@@ -295,7 +299,13 @@ function Form(props) {
 
       <div>
         <Score scoreUpdate={currScore} />
-        <input type="text" onChange={handleChange} autoComplete="false"  />
+        <input
+          type="text"
+          onChange={handleChange}
+          value={inputValue}
+          autoComplete="false"
+          onFocus={clearInput}
+        />
         <input type="submit" onClick={handleClick} />
       </div>
     </div>
