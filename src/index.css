@@ -17,7 +17,7 @@ body {
 #root {
   height: 100%;
   width: 100%;
-  background-image: url("https://pixabay.com/get/g33f971244b048de17083c8ac3f4ea136c0a76de172c9c9d61ad2244ad7a9c28c14d6fb7a8b9ee100ec7524f892e4622c.svg");
+  background-image: url("assets/world-67861_1920.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,20 +30,16 @@ body {
   height: 80%;
   width: 90%;
   max-width: 600px;
-  background-color: rgba(103, 82, 60, 0.151);
+  background-color: rgba(103, 82, 60, 0.451);
   border: 1px solid rgb(227, 220, 220);
   display: flex;
   flex-direction: column;
   gap: 50px;
   align-items: center;
   justify-content: center;
-  color: rgb(253, 253, 253);
+  color: rgb(236, 236, 236);
   padding: 20px;
 }
-  
- h1{
-  font-size: 100px;
- }
 
 .form-div > div {
   display: flex;
@@ -60,6 +56,8 @@ body {
   height: 40px;
   border-radius: 5px;
 }
+ 
+
 
 /* Media Queries */
 
@@ -69,6 +67,9 @@ body {
     height: 90%;
     width: 95%;
     gap: 30px;
+  }
+  #root{
+    background-image:url("assets/worldmap2.png") ;
   }
 }
 
